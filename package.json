@@ -1,0 +1,19 @@
+{
+  "name": "advent",
+  "version": "0.1.0",
+  "scripts": {
+    "build": "bsb -make-world",
+    "start": "bsb -make-world -w",
+    "clean": "bsb -clean-world",
+    "test": "jest --watchAll"
+  },
+  "keywords": [
+    "BuckleScript"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "bs-jest": "^0.2.0",
+    "bs-platform": "^2.1.0"
+  }
+}
