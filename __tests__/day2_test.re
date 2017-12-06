@@ -5,31 +5,72 @@ open Jest;
 open Day2;
 
 describe(
-  "Sample Input",
+  "Part 1",
   () => {
-    open Expect;
-    open! Expect.Operators;
-    test("5 1 9 5", () => expect(run_line("5 1 9 5")) == 8);
-    test("7 5 3", () => expect(run_line("7 5 3")) == 4);
-    test("2 4 6 8", () => expect(run_line("2 4 6 8")) == 6)
+    describe(
+      "Sample Input",
+      () => {
+        open Expect;
+        open! Expect.Operators;
+        test("5 1 9 5", () => expect(run_line("5 1 9 5")) == 8);
+        test("7 5 3", () => expect(run_line("7 5 3")) == 4);
+        test("2 4 6 8", () => expect(run_line("2 4 6 8")) == 6)
+      }
+    );
+    describe(
+      "Official input",
+      () => {
+        open Expect;
+        open! Expect.Operators;
+        test(
+          "Line 1",
+          () =>
+            expect(
+              run_line(
+                "104  240 147 246 123 175 372 71  116 230 260 118 202  270 277 292"
+              )
+            )
+            == 372
+            - 71
+        );
+        /* It works :D */
+        test("Input", () => expect(run(input)) == 36766)
+      }
+    )
   }
 );
 
 describe(
-  "Official input",
+  "Part 2",
   () => {
-    open Expect;
-    open! Expect.Operators;
-    test(
-      "Line 1",
-      () =>
-        expect(
-          run_line("104  240 147 246 123 175 372 71  116 230 260 118 202  270 277 292")
-        )
-        == 372
-        - 71
+    describe(
+      "Simple tests",
+      () => {
+        open Expect;
+        open! Expect.Operators;
+        test("5 9 2 8", () => expect(run_line_2("5 9 2 8")) == 4);
+        test("9 4 7 3", () => expect(run_line_2("9 4 7 3")) == 3);
+        test("3 8 6 5", () => expect(run_line_2("3 8 6 5")) == 2)
+      }
     );
-    /* It works :D */
-    test("Input", () => expect(run(input)) == 36766);
+    describe(
+      "real input",
+      () => {
+        open Expect;
+        open! Expect.Operators;
+        test(
+          "first line",
+          () =>
+            expect(
+              run_line_2(
+                "104  240 147 246 123 175 372 71  116 230 260 118 202  270 277 292"
+              )
+            )
+            == 2
+        );
+        /* It worked */
+        test("real input", () => expect(run_2(input)) == 261)
+      }
+    )
   }
 );
